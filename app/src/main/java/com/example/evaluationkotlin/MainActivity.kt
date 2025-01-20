@@ -33,32 +33,38 @@ class MainActivity : ComponentActivity() {
             var displayText by remember { mutableStateOf("") }
 
             Column(modifier = Modifier.fillMaxSize().padding(top = 350.dp)) {
-                DisplaySum(modifier = Modifier.padding(30.dp))
+
+                DisplaySum(modifier = Modifier.padding(10.dp), displayText = displayText)
 
                 Row(modifier = Modifier.padding(top = 16.dp)) {
-                    ButtonPad1(onClick = {  })
-                    ButtonPad2(onClick = {  })
-                    ButtonPad3(onClick = {  })
-                    ButtonPadPlus(onClick = {  })
+                    ButtonPadAC(onClick = {  })
+                    ButtonPadModulo(onClick = { displayText += "%" })
+                    ButtonPadEqual(onClick = { displayText += "=" })
+                }
+                Row(modifier = Modifier.padding()) {
+                    ButtonPad1(onClick = { displayText += "1" })
+                    ButtonPad2(onClick = { displayText += "2" })
+                    ButtonPad3(onClick = { displayText += "3" })
+                    ButtonPadPlus(onClick = { displayText += "+"})
 
                 }
                 Row(modifier = Modifier.padding()) {
-                    ButtonPad4(onClick = {  })
-                    ButtonPad5(onClick = {  })
-                    ButtonPad6(onClick = {  })
-                    ButtonPadMinus(onClick = {  })
+                    ButtonPad4(onClick = { displayText += "4" })
+                    ButtonPad5(onClick = { displayText += "5" })
+                    ButtonPad6(onClick = { displayText += "6" })
+                    ButtonPadMinus(onClick = { displayText += "-" })
                 }
                 Row(modifier = Modifier.padding()) {
-                    ButtonPad7(onClick = {  })
-                    ButtonPad8(onClick = {  })
-                    ButtonPad9(onClick = {  })
-                    ButtonPadMultiplication(onClick = {  })
+                    ButtonPad7(onClick = { displayText += "7" })
+                    ButtonPad8(onClick = { displayText += "8" })
+                    ButtonPad9(onClick = { displayText += "9" })
+                    ButtonPadMultiplication(onClick = { displayText += "x" })
                 }
                 Row(modifier = Modifier.padding()) {
-                    ButtonPad0(onClick = {  })
-                    ButtonPadDot(onClick = {  })
+                    ButtonPad0(onClick = { displayText += "0" })
+                    ButtonPadDot(onClick = { displayText += "." })
                     ButtonPadDel(onClick = {  })
-                    ButtonPadDivision(onClick = {  })
+                    ButtonPadDivision(onClick = { displayText += "÷" })
                 }
             }
             }
@@ -66,12 +72,37 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun DisplaySum(modifier: Modifier){
-
+    fun DisplaySum(modifier: Modifier = Modifier, displayText: String) {
+        Text(
+            text = displayText,
+            fontSize = 36.sp,
+            modifier = modifier
+        )
     }
 
-    // First Row
+    //First Row
+    @Composable
+    fun ButtonPadModulo(onClick: () -> Unit = { var displayText = "1" }) {
+        Button(onClick = { onClick() }) {
+            Text("%")
+        }
+    }
 
+    @Composable
+    fun ButtonPadAC(onClick: () -> Unit = { var displayText = "1" }) {
+        Button(onClick = { onClick() }) {
+            Text("AC")
+        }
+    }
+
+    @Composable
+    fun ButtonPadEqual(onClick: () -> Unit = { var displayText = "1" }) {
+        Button(onClick = { onClick() }) {
+            Text("=")
+        }
+    }
+
+    // Second Row
     @Composable
     fun ButtonPad1(onClick: () -> Unit = { var displayText = "1" }) {
         Button(onClick = { onClick() }) {
@@ -100,7 +131,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //Second Row
+    //Third Row
     @Composable
     fun ButtonPad4(onClick: () -> Unit) {
         Button(onClick = { onClick() }) {
@@ -128,7 +159,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    // Third Row
+    // Fourth Row
     @Composable
     fun ButtonPad7(onClick: () -> Unit) {
         Button(onClick = { onClick() }) {
@@ -157,7 +188,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //Forth Row
+    //Fifth Row
     @Composable
     fun ButtonPad0(onClick: () -> Unit) {
         Button(onClick = { onClick() }) {
