@@ -38,16 +38,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             var displayText by remember { mutableStateOf("") }
 
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .background(Color.LightGray)
+            Column(modifier = Modifier.fillMaxSize()
             ) {
 
-                DisplaySum(modifier = Modifier
-                    .padding(50.dp)
-                    .width(5000.dp).height(100.dp)
-                    .background(Color.White),
-                    displayText = displayText)
+                DisplaySum(modifier = Modifier.padding(50.dp), displayText = displayText)
 
                 Row(modifier = Modifier.padding(top = 16.dp)) {
                     ButtonPadAC(onClick = {  })
