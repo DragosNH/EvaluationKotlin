@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -19,6 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -45,7 +47,7 @@ class MainActivity : ComponentActivity() {
                     ButtonPad1(onClick = { displayText += "1" })
                     ButtonPad2(onClick = { displayText += "2" })
                     ButtonPad3(onClick = { displayText += "3" })
-                    ButtonPadPlus(onClick = { displayText += "+"})
+                    ButtonPadPlus(onClick = { displayText += "+"; })
 
                 }
                 Row(modifier = Modifier.padding()) {
@@ -83,21 +85,29 @@ class MainActivity : ComponentActivity() {
     //First Row
     @Composable
     fun ButtonPadModulo(onClick: () -> Unit = { var displayText = "1" }) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("%")
         }
     }
 
     @Composable
     fun ButtonPadAC(onClick: () -> Unit = { var displayText = "1" }) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Blue)) {
             Text("AC")
         }
     }
 
     @Composable
     fun ButtonPadEqual(onClick: () -> Unit = { var displayText = "1" }) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("=")
         }
     }
@@ -105,28 +115,40 @@ class MainActivity : ComponentActivity() {
     // Second Row
     @Composable
     fun ButtonPad1(onClick: () -> Unit = { var displayText = "1" }) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("1")
         }
     }
 
     @Composable
     fun ButtonPad2(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("2")
         }
     }
 
     @Composable
     fun ButtonPad3(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("3")
         }
     }
 
     @Composable
     fun ButtonPadPlus(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("+")
         }
     }
@@ -134,27 +156,39 @@ class MainActivity : ComponentActivity() {
     //Third Row
     @Composable
     fun ButtonPad4(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("4")
         }
     }
 
     @Composable
     fun ButtonPad5(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("5")
         }
     }
 
     @Composable
     fun ButtonPad6(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("6")
         }
     }
     @Composable
     fun ButtonPadMinus(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("-")
         }
     }
@@ -162,28 +196,40 @@ class MainActivity : ComponentActivity() {
     // Fourth Row
     @Composable
     fun ButtonPad7(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("7")
         }
     }
 
     @Composable
     fun ButtonPad8(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("8")
         }
     }
 
     @Composable
     fun ButtonPad9(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("9")
         }
     }
 
     @Composable
     fun ButtonPadMultiplication(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("x")
         }
     }
@@ -191,28 +237,39 @@ class MainActivity : ComponentActivity() {
     //Fifth Row
     @Composable
     fun ButtonPad0(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("0")
         }
     }
 
     @Composable
     fun ButtonPadDot(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text(".")
         }
     }
 
     @Composable
     fun ButtonPadDel(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Red)) {
             Text("Del")
         }
     }
 
     @Composable
     fun ButtonPadDivision(onClick: () -> Unit) {
-        Button(onClick = { onClick() }) {
+        Button(onClick = { onClick() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )) {
             Text("÷")
         }
     }
