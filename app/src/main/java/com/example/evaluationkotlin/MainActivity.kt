@@ -5,10 +5,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -34,9 +38,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             var displayText by remember { mutableStateOf("") }
 
-            Column(modifier = Modifier.fillMaxSize().padding(top = 350.dp)) {
+            Column(modifier = Modifier
+                .fillMaxSize()
+                .background(Color.LightGray)
+            ) {
 
-                DisplaySum(modifier = Modifier.padding(10.dp), displayText = displayText)
+                DisplaySum(modifier = Modifier
+                    .padding(50.dp)
+                    .width(5000.dp).height(100.dp)
+                    .background(Color.White),
+                    displayText = displayText)
 
                 Row(modifier = Modifier.padding(top = 16.dp)) {
                     ButtonPadAC(onClick = {  })
@@ -77,7 +88,7 @@ class MainActivity : ComponentActivity() {
     fun DisplaySum(modifier: Modifier = Modifier, displayText: String) {
         Text(
             text = displayText,
-            fontSize = 36.sp,
+            fontSize = 45.sp,
             modifier = modifier
         )
     }
